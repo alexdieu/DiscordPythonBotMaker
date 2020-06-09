@@ -30,7 +30,7 @@ def start() :
                 f.write('{}'.format(OnreadyMsg))
             if personnal == 'no' :
                 print('On ready message set as default !')
-                OnreadyMsg =  ('@client.event\nasync def on_ready():\n    client.loop.create_task(status_task())\n    print(\'Registred as \' + client.user.name)\n    print(\"API version of discord.py :\", discord.version\n    print(\"Python version :\", platform.python_version())\n    print(\"Running on :\", platform.system(), platform.release(), \"(\" + os.name + \")\")\n    print(\'-------------------\')')
+                OnreadyMsg =  ('@client.event\nasync def on_ready():\n    client.loop.create_task(status_task())\n    print(\'Registred as \' + client.user.name)\n    print(\"API version of discord.py :\"), discord.version\n    print(\"Python version :\", platform.python_version())\n    print(\"Running on :\", platform.system(), platform.release(), \"(\" + os.name + \")\")\n    print(\'-------------------\')')
                 f.write('{}'.format(OnreadyMsg))
             else:
                 print('Answer by yes or no please !')
