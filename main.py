@@ -33,21 +33,28 @@ def start() :
                 print('On ready message set as default !')
                 OnreadyMsg =  ('\n@bot.event\nasync def on_ready():\n    print(\'Registred as \' + bot.user.name)\n    print(\"API version of discord.py :\"), discord.__version__\n    print(\"Python version :\", platform.python_version())\n    print(\"Running on :\", platform.system(), platform.release(), \"(\" + os.name + \")\")\n    print(\'-------------------\')')
                 f.write('{}'.format(OnreadyMsg))
-                choice1 = input('Now what do you want see next ? events or commands or plugins(commands written by community or Alexdieu(Credits of the plugin at the end)\nPLEASE ANSWER by the choices proposed : events , commands or plugins !\nYour answer :')
-                if choice1 == 'event':
-                    print('events')
-                    f.write('WORKING')
-                if choice1 == 'commands':
-                    print('commands')
-                    f.write('WORKING')
-                if choice1 == 'plugins':
-                    print('plugins')
-                    f.write('WORKING')
-                else:
-                    print('PLEASE ANSWER by the choices proposed : events , commands or plugins !')
 
+            choice1 = input('Now what do you want see next ? events , commands ,plugins or exit ?(commands written by community or Alexdieu(Credits of the plugin at the end)\nPLEASE ANSWER by the choices proposed : events , commands or plugins !\nYour answer :')
+            if choice1 == 'event':
+                print('events')
+                choiceEV = input('What event do you want ?\n1.On member join \n2.On reaction add\n3.')
+
+            if choice1 == 'commands':
+                print('commands')
+                f.write('WORKING')
+            if choice1 == 'plugins':
+                print('plugins')
+                f.write('WORKING')
+            if choice1 == ('exit'):
+                print('credits: Alexdieu . Maybe Others with the time ;)')
+                END = 'bot.run(TOKEN)'
+                f.write('{}'.format(END))
+                invalid_input = True
             else:
-                print('Answer by yes or no please !')
+                print('PLEASE ANSWER by the choices proposed : events , commands , exit or plugins !')
+
+    else:
+        print('Answer by yes or no please !')
 
 
     if in_pick == '2':
