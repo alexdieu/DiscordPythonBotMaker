@@ -26,11 +26,11 @@ def start() :
                 print('to mention the bot name add anywhere in your message {BOTNAME}')
                 OnreadyMsgP = input('Please enter your new message wich the bot will display in the console when it is ready (if you want to write this carcter : \' please do \ then \' thanks (if not your bot will not working  thanks !) :')
                 BOTNAME = client.user.name
-                OnreadyMsg = (f'@client.event\nasync def on_ready():\n    client.loop.create_task(status_task())\n    print(\'{OnreadyMsgP}\')\n')
+                OnreadyMsg = (f'\n@client.event\nasync def on_ready():\n    client.loop.create_task(status_task())\n    print(\'{OnreadyMsgP}\')\n')
                 f.write('{}'.format(OnreadyMsg))
             if personnal == 'no' :
                 print('On ready message set as default !')
-                OnreadyMsg =  ('@client.event\nasync def on_ready():\n    client.loop.create_task(status_task())\n    print(\'Registred as \' + client.user.name)\n    print(\"API version of discord.py :\"), discord.version\n    print(\"Python version :\", platform.python_version())\n    print(\"Running on :\", platform.system(), platform.release(), \"(\" + os.name + \")\")\n    print(\'-------------------\')')
+                OnreadyMsg =  ('\n@client.event\nasync def on_ready():\n    client.loop.create_task(status_task())\n    print(\'Registred as \' + client.user.name)\n    print(\"API version of discord.py :\"), discord.version\n    print(\"Python version :\", platform.python_version())\n    print(\"Running on :\", platform.system(), platform.release(), \"(\" + os.name + \")\")\n    print(\'-------------------\')')
                 f.write('{}'.format(OnreadyMsg))
             else:
                 print('Answer by yes or no please !')
