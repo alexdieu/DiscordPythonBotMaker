@@ -65,28 +65,32 @@ def start() :
 
     if in_pick == '3':
         print('Created by Alexdieu')
-        time.sleep(1)
         invalid_input = False
-        debut()
+        sys.exit()
+
     else:
         print('This Option doesn\'t exist (may be yet) sorry')
 
 def choice2():
     global f
     invalid_inputCHOICE2 = False
-    choice1 = input('Now what do you want see next ? events , commands ,plugins(soon!) or exit ?(commands written by community or Alexdieu(Credits of the plugin at the end)\nPLEASE ANSWER by the choices proposed : events , commands ,exit(finish the file and compile it) or plugins(integred functiinalities or Precommands) !\nYour answer :')
+    choice1 = input('Now what do you want see next ? events , commands ,plugins(soon!) or exit(compile the file) ?(commands written by community or Alexdieu(Credits of the plugins at the end)\nPLEASE ANSWER by the choices proposed : events , commands ,exit(finish the file and compile it) or plugins(integred functiinalities or Precommands) !\nYour answer :')
     if choice1 == 'events':
         print('events')
         choiceEV = input('What event do you want ?\n1.On member join \n2.On reaction add\n3.On member leave\nChoice :')
         if choiceEV == '1':
             onmemberjoin()
+        if choiceEV == '2':
+            print('soon')
+            choice2()
+
 
 
     if choice1 == 'commands':
         commands()
 
     if choice1 == 'plugins' :
-        print('plugins(soon!)')
+        print('plugins(soon!I am working on it :))')
         choice2()
     if choice1 == ('exit'):
         print('credits: Alexdieu . Maybe Others with the time ;)')
