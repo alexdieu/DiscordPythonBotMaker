@@ -5,7 +5,11 @@ I will soon add a wiki an all kind of stuff !
 **WORK IN PROGRESS !**
 * Last updates :
 -Automated setup added : ✅
+
 -MorePossibilities added :❌
+
 -Automation :❌
+
 -All bugs actually fixed :❌
+
 -Personnalisation compatible : ✅
