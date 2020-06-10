@@ -21,7 +21,7 @@ def pick_one():
     namefile = input("okay , what should be the main file bot title ? \n")
     PREFIX = input("Before starting , what should be the bot prefix ? \n")
     token = input('What is the bot token ? \n')
-    start = f"import discord\nfrom io import BytesIO\nfrom discord.ext import commands\nimport asyncio\nimport aiohttp\nfrom discord.ext.commands import Bot\nimport os\nimport platform\nfrom platform import python_version\n\n\nbot = commands.Bot(command_prefix='{PREFIX}')\nOWNER = ['{ID}'']\nBLACKLIST = []\nTOKEN = '{token}'"
+    start = f'import discord\nfrom io import BytesIO\nfrom discord.ext import commands\nimport asyncio\nimport aiohttp\nfrom discord.ext.commands import Bot\nimport os\nimport platform\nfrom platform import python_version\n\n\nbot = commands.Bot(command_prefix=\'{PREFIX}\')\nOWNER = [{ID}]\nBLACKLIST = []\nTOKEN = \'{token}\''
     with open(namefile + ".py", 'w') as f:
         f.write('{}'.format(start))
         print('Bot succesfully created ! Now let\'s do the starting events !')
@@ -35,12 +35,12 @@ def startEvent():
     if personnal == 'yes':
         print('The bot name is metionned at the end of your message !')
         OnreadyMsgP = input(f'Please enter your new message wich the bot will display in the console when it is ready (if you want to write this caracter : \' please do \ then \' thanks (if not your bot will not working  thanks !) :')
-        OnreadyMsg = (f'\n@bot.event\nasync def on_ready():\n    print(\'{OnreadyMsgP}\'+ bot.user.name )\n    print(\'Created by DISCORDBOTMAKER(by alexdieu)\')\n')
+        OnreadyMsg = (f'\n\n@bot.event\nasync def on_ready():\n    print(\'{OnreadyMsgP}\'+ bot.user.name )\n    print(\'Created by DISCORDBOTMAKER(by alexdieu)\')\n')
         f.write('{}'.format(OnreadyMsg))
         choice2()
     if personnal == 'no':
         print('On ready message set as default !')
-        OnreadyMsg = ('\n@bot.event\nasync def on_ready():\n    print(\'Registred as \' + bot.user.name)\n    print(\'Created by DISCORDBOTMAKER(by alexdieu)\')\n    print(\"API version of discord.py :\"), discord.__version__\n    print(\"Python version :\", platform.python_version())\n    print(\"Running on :\", platform.system(), platform.release(), \"(\" + os.name + \")\")\n    print(\'-------------------\')')
+        OnreadyMsg = ('\n\n@bot.event\nasync def on_ready():\n    print(\'Registred as \' + bot.user.name)\n    print(\'Created by DISCORDBOTMAKER(by alexdieu)\')\n    print(\"API version of discord.py :\"), discord.__version__\n    print(\"Python version :\", platform.python_version())\n    print(\"Running on :\", platform.system(), platform.release(), \"(\" + os.name + \")\")\n    print(\'-------------------\')')
         f.write('{}'.format(OnreadyMsg))
         choice2()
     else:
@@ -77,7 +77,7 @@ def choice2():
     choice1 = input('Now what do you want see next ? events , commands ,plugins(soon!) or exit ?(commands written by community or Alexdieu(Credits of the plugin at the end)\nPLEASE ANSWER by the choices proposed : events , commands ,exit(finish the file and compile it) or plugins(integred functiinalities or Precommands) !\nYour answer :')
     if choice1 == 'events':
         print('events')
-        choiceEV = input('What event do you want ?\n1.On member join \n2.On reaction add\n3.On member join (not actually working (fix soon !))')
+        choiceEV = input('What event do you want ?\n1.On member join \n2.On reaction add\n3.On member leave\nChoice :')
         if choiceEV == '1':
             onmemberjoin()
 
@@ -93,8 +93,7 @@ def choice2():
         END = '\n\nbot.run(TOKEN)'
         f.write('{}'.format(END))
         f.close()
-        invalid_input = True
-        debut()
+        start()
     else:
         print('PLEASE ANSWER by the choices proposed : events , commands , exit or plugins !')
         invalid_inputCHOICE2 = True
@@ -127,7 +126,7 @@ def onmemberjoin():
     print('Did the bot say your message in DM or in the same channel as the person send the message ?(To answer , \nPlease say 1 for DM , \n2.In a specific channel(need the channel ID), \n3.DM and specific channel\n4.back )')
     answer2 = input('Your choice : ')
     if answer2 == '1':
-        DMsg = input('\n Use Tutorial : \nYou have to write or copy/paste :\n{{ID}} to mention member who just joined\n{{SERVERNAME}} to mention the server !\nAnd **To write in bold** or \ and \' to write \' !\nWhat should be the DM message ?\n')
+        DMsg = input('\n Use Tutorial : \nYou have to write or copy/paste :\n{ID} to mention member who just joined\n{SERVERNAME} to mention the server !\nAnd **To write in bold** or \ and \' to write \' !\nWhat should be the DM message ?\n')
         DMNEW = (f'\n@client.event\nasync def on_member_join(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\'\n    await member.create_dm()\n    await member.dm_channel.send(f\'{DMsg}\')')
         f.write('{}'.format(DMNEW))
         print('succes')
@@ -135,12 +134,25 @@ def onmemberjoin():
     if answer2 == '2':
         print('Specific channel')
         CHANNELID = input('What is the welcome channel ID ?\n')
-        MMSSGG = input('What is the welcome message ?\nTo mention user , please copy/paste {{MEMBERMENTION}} in your message, and to mention server it\'s {{SERVERNAME}} \n')
-        SpecificCHAN = (f'\n@bot.event\nasync def on_member_join(member):\n    print(f\'{{member.id}}, {{member}}Join the server!\')\n    MEMBERMENTION = \'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    channel = bot.get_channel(date[\'{CHANNELID}\'])\n    await channel.send(f\'{MMSSGG}\')')
+        MMSSGG = input('What is the welcome message ?\nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME} \n')
+        SpecificCHAN = (f'\n@bot.event\nasync def on_member_join(member):\n    print(f\'{{member.id}}, {{member}}Join the server!\')\n    ID = \'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    channel = bot.get_channel(date[\'{CHANNELID}\'])\n    await channel.send(f\'{MMSSGG}\')')
         f.write('{}'.format(SpecificCHAN))
+        print('succes')
         choice2()
     if answer2 == '3':
         print('You requested DM + Specific channel')
+        CHANELID1 = input('What is the channel ID ?\n')
+        CHANNELMSG = input('What is the welcome message ?\nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME} \n')
+        DNEWM = input('What will be your welcome Dm message ?\nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME}\n')
+        ALLINONE = (f'\n@client.event\nasync def on_member_join(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\'\n    await member.create_dm()\n    await member.dm_channel.send(f\'{DNEWM}\')\n    channel = bot.get_channel(date[\'{CHANELID1}\'])\n    await channel.send(f\'{CHANNELMSG}\')')
+        f.write('{}'.format(ALLINONE))
+        print('succes')
+        choice2()
+    if answer2 == '4':
+        choice2()
+    else:
+        print('Please choose 1 , 2 ,3 or 4 !')
+        onmemberjoin()
 
 
 
