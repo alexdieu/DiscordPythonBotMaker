@@ -3,7 +3,7 @@ This is a Command Line tool to made python discord bots without having to code !
 If you want to help me you are welcome ! just modify and add your components !
 I will soon add a wiki an all kind of stuff !
 **WORK IN PROGRESS !**
-Free Host I recommend for hosting python bots(prices are very cheap if you want to upgarde for more space storage !) : https://inovaperf.fr/
+Free Host(host is free for life !) I recommend for hosting python bots(prices are very cheap if you want to upgarde for more space storage !) : https://inovaperf.fr/
 * Last updates :
 
 -Automated setup added : ✅
