@@ -126,7 +126,7 @@ def onmemberjoin():
     print('Did the bot say your message in DM or in the same channel as the person send the message ?(To answer , \nPlease say 1 for DM , \n2.In a specific channel(need the channel ID), \n3.DM and specific channel\n4.back )')
     answer2 = input('Your choice : ')
     if answer2 == '1':
-        DMsg = input('\n Use Tutorial : \nYou have to write or copy/paste :\n{ID} to mention member who just joined\n{SERVERNAME} to mention the server !\nAnd **To write in bold** or \ and \' to write \' !\nWhat should be the DM message ?\n')
+        DMsg = input('\n Use Tutorial : \nTo type \' do \\\' \nYou have to write or copy/paste :\n{ID} to mention member who just joined\n{SERVERNAME} to mention the server !\nAnd **To write in bold** or \ and \' to write \' !\nWhat should be the DM message ?\n')
         DMNEW = (f'\n@client.event\nasync def on_member_join(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\'\n    await member.create_dm()\n    await member.dm_channel.send(f\'{DMsg}\')')
         f.write('{}'.format(DMNEW))
         print('succes')
@@ -134,7 +134,7 @@ def onmemberjoin():
     if answer2 == '2':
         print('Specific channel')
         CHANNELID = input('What is the welcome channel ID ?\n')
-        MMSSGG = input('What is the welcome message ?\nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME} \n')
+        MMSSGG = input('What is the welcome message ?\nTo type \' do \\\' \nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME} \n')
         SpecificCHAN = (f'\n@bot.event\nasync def on_member_join(member):\n    print(f\'{{member.id}}, {{member}}Join the server!\')\n    ID = \'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    channel = bot.get_channel(date[\'{CHANNELID}\'])\n    await channel.send(f\'{MMSSGG}\')')
         f.write('{}'.format(SpecificCHAN))
         print('succes')
@@ -142,8 +142,8 @@ def onmemberjoin():
     if answer2 == '3':
         print('You requested DM + Specific channel')
         CHANELID1 = input('What is the channel ID ?\n')
-        CHANNELMSG = input('What is the welcome message ?\nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME} \n')
-        DNEWM = input('What will be your welcome Dm message ?\nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME}\n')
+        CHANNELMSG = input('What is the welcome message ?\nTo type \' do \\\' \nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME} \n')
+        DNEWM = input('What will be your welcome Dm message ?\nTo type \' do \\\' \nTo mention user , please copy/paste {ID} in your message, and to mention server it\'s {SERVERNAME}\n')
         ALLINONE = (f'\n@client.event\nasync def on_member_join(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\'\n    await member.create_dm()\n    await member.dm_channel.send(f\'{DNEWM}\')\n    channel = bot.get_channel(date[\'{CHANELID1}\'])\n    await channel.send(f\'{CHANNELMSG}\')')
         f.write('{}'.format(ALLINONE))
         print('succes')
