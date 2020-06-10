@@ -11,7 +11,7 @@ I will soon add a wiki an all kind of stuff !
 
 -MorePossibilities added :❌
 
--Automation :❌
+-Automation :✅
 
 -All bugs actually fixed :❌
 
