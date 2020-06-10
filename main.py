@@ -135,12 +135,13 @@ def onmemberjoin():
     if answer2 == '2':
         print('Specific channel')
         CHANNELID = input('What is the welcome channel ID ?\n')
-        MMSSGG = input('What is the welcome message ?\nTo mention user , please copy/paste {{MEMBERMENTION}} in your message.\n')
-        SpecificCHAN = (f'\n@bot.event\nasync def on_member_join(member):\n    print(f\'{{member.id}}, {{member}}Join the server!\')\n    MEMBERMENTION = \'<@{{member.id}}>\'\n    channel = bot.get_channel(date[\'{CHANNELID}\'])\n    await channel.send(f\'{MMSSGG}\')')
+        MMSSGG = input('What is the welcome message ?\nTo mention user , please copy/paste {{MEMBERMENTION}} in your message, and to mention server it\'s {{SERVERNAME}} \n')
+        SpecificCHAN = (f'\n@bot.event\nasync def on_member_join(member):\n    print(f\'{{member.id}}, {{member}}Join the server!\')\n    MEMBERMENTION = \'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    channel = bot.get_channel(date[\'{CHANNELID}\'])\n    await channel.send(f\'{MMSSGG}\')')
         f.write('{}'.format(SpecificCHAN))
         choice2()
     if answer2 == '3'
         print('You requested DM + Specific channel')
+
 
 
 while invalid_input :
