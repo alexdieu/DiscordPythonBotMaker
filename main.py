@@ -34,7 +34,7 @@ def start() :
                 OnreadyMsg =  ('\n@bot.event\nasync def on_ready():\n    print(\'Registred as \' + bot.user.name)\n    print(\"API version of discord.py :\"), discord.__version__\n    print(\"Python version :\", platform.python_version())\n    print(\"Running on :\", platform.system(), platform.release(), \"(\" + os.name + \")\")\n    print(\'-------------------\')')
                 f.write('{}'.format(OnreadyMsg))
 
-            choice1 = input('Now what do you want see next ? events , commands ,plugins or exit ?(commands written by community or Alexdieu(Credits of the plugin at the end)\nPLEASE ANSWER by the choices proposed : events , commands or plugins !\nYour answer :')
+            choice1 = input('Now what do you want see next ? events , commands ,plugins or exit ?(commands written by community or Alexdieu(Credits of the plugin at the end)\nPLEASE ANSWER by the choices proposed : events , commands ,exit or plugins(integred functiinalities or Precommands) !\nYour answer :')
             if choice1 == 'event':
                 print('events')
                 choiceEV = input('What event do you want ?\n1.On member join \n2.On reaction add\n3.')
