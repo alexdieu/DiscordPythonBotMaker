@@ -99,16 +99,6 @@ def choice2():
         if choiceEV == '3':
             onmemberleft()
 
-def onmemberleft():
-    LEFTCHANNEL = input('What is the leaving channel ?(channel ID)\n')
-    MSGLEFT = input('What is the leaving message ?(Watch the tutorial on github for  mentions , and server name !)\n')
-    Leftmessage = (f'@bot.event\nasync def on_member_remove(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    print(f\'{{member.id}}, {{member}} left the server!\')\n    channel = bot.get_channel(date[\'leave_channel\'])\n    await channel.send(f\'{MSGLEFT}\')')
-    f.write('{}'.format(Leftmessage))
-
-
-
-
-
     if choice1 == 'commands':
         commands()
 
@@ -138,6 +128,11 @@ def commands():
     if commands_choice == '1':
         perso_com()
 
+def onmemberleft():
+    LEFTCHANNEL = input('What is the leaving channel ?(channel ID)\n')
+    MSGLEFT = input('What is the leaving message ?(Watch the tutorial on github for  mentions , and server name !)\n')
+    Leftmessage = (f'@bot.event\nasync def on_member_remove(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    print(f\'{{member.id}}, {{member}} left the server!\')\n    channel = bot.get_channel(date[\'leave_channel\'])\n    await channel.send(f\'{MSGLEFT}\')')
+    f.write('{}'.format(Leftmessage))
 
 def perso_com():
     global f
