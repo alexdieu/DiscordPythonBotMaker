@@ -4,3 +4,4 @@ pause
 python -m pip install discord.py
 python -m pip install asyncio
 python -m pip install aiohttp
+python main.py
