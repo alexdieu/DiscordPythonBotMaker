@@ -7,6 +7,8 @@ I will soon add a wiki an all kind of stuff !
 
 -Automated setup added : ✅
 
+-Event On member Join : ✅/❌ ALMOST !
+
 -MorePossibilities added :❌
 
 -Automation :❌
