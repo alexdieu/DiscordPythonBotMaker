@@ -4,6 +4,7 @@ If you want to help me you are welcome ! just modify and add your components !
 I will soon add a wiki an all kind of stuff !
 **WORK IN PROGRESS !**
 * Last updates :
+
 -Automated setup added : ✅
 
 -MorePossibilities added :❌
