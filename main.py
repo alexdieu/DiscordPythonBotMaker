@@ -90,6 +90,7 @@ def choice2():
         choice2()
     if choice1 == ('exit'):
         print('credits: Alexdieu . Maybe Others with the time ;)')
+        print('Plugins credits : \n -Google for Google translate api !')
         END = '\n\nbot.run(TOKEN)'
         f.write('{}'.format(END))
         f.close()
