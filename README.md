@@ -15,6 +15,8 @@ Free Host(host is free for life !) I recommend for hosting python bots(prices ar
 
 -event On reaction add : ❌ only in Beta Version
 
+-Embed : BETA VERSION ONLY !
+
 -MorePossibilities added :❌
 
 -Automation :✅
