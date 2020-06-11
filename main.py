@@ -148,16 +148,16 @@ def perso_com():
         ANSWER1 = input('What will the bot answer \n(see github wiki for https://github.com/alexdieu/DiscordPythonBotMaker/wiki/tutorial syntax) ?\n')
         COMPERSO = (f"@bot.command()\nasync def {NAMECOM}():\n    await context.message.channel.send(\"{ANSWER1}\")")
         perso_com()
-    if CHOICEPERSO == '2'
+    if CHOICEPERSO == '2':
         print('soon !')
         perso_com()
-    if CHOICEPERSO == '3'
+    if CHOICEPERSO == '3':
         choice2()
     else:
         print('please answer by 1,2 or 3!')
         perso_com()
-        
-    
+
+
 def onmemberjoin():
     global f
     print('event on member join choosed !')
