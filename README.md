@@ -4,7 +4,7 @@ If you want to help me you are welcome ! just modify and add your components !
 I will soon add a wiki an all kind of stuff !
 **WORK IN PROGRESS !**
 Free Host(host is free for life !) I recommend for hosting python bots(prices are very cheap if you want to upgarde for more space storage !) : https://inovaperf.fr/
-**PLEASE CONSULT TUTO BEFORE USE ! https://github.com/alexdieu/DiscordPythonBotMaker/wiki/tutorial**
+**PLEASE CONSULT [TUTO](https://github.com/alexdieu/DiscordPythonBotMaker/wiki/tutorial) BEFORE USE ! **
 * Last updates :
 
 -Automated setup added : ✅
