@@ -9,7 +9,9 @@ Free Host(host is free for life !) I recommend for hosting python bots(prices ar
 
 -Automated setup added : ✅
 
--Event On member Join : ✅/❌ ALMOST !
+-Event On member Join : ✅
+
+-Event On member leave : ❌ ALMOST !
 
 -MorePossibilities added :❌
 
