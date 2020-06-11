@@ -128,7 +128,7 @@ def commands():
 def onmemberleft():
     LEFTCHANNEL = input('What is the leaving channel ?(channel ID)\n')
     MSGLEFT = input('What is the leaving message ?(Watch the tutorial on github for  mentions , and server name !)\n')
-    Leftmessage = (f'@bot.event\nasync def on_member_remove(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    print(f\'{{member.id}}, {{member}} left the server!\')\n    channel = bot.get_channel(date[\'leave_channel\'])\n    await channel.send(f\'{MSGLEFT}\')')
+    Leftmessage = (f'\n@bot.event\nasync def on_member_remove(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    print(f\'{{member.id}}, {{member}} left the server!\')\n    channel = bot.get_channel(date[\'leave_channel\'])\n    await channel.send(f\'{MSGLEFT}\')')
     f.write('{}'.format(Leftmessage))
 
 def perso_com():
@@ -143,13 +143,14 @@ def perso_com():
     if CHOICEPERSO == '1':
         NAMECOM = input('What will b the command name ?\n')
         ANSWER1 = input('What will the bot answer \n(see github wiki for https://github.com/alexdieu/DiscordPythonBotMaker/wiki/tutorial syntax) ?\n')
-        COMPERSO = (f"@bot.command()\nasync def {NAMECOM}(context):\n    AUTHOR = \'<@message.author.id>\'\n    SERVERNAME = member.guild.name\n    await context.message.channel.send(\"{ANSWER1}\")")
+        COMPERSO = (f"\n@bot.command()\nasync def {NAMECOM}(context):\n    AUTHOR = \'<@message.author.id>\'\n    SERVERNAME = member.guild.name\n    await context.message.channel.send(\"{ANSWER1}\")")
         f.write('{}'.format(COMPERSO))
         print('succes !')
         perso_com()
     if CHOICEPERSO == '2':
-        print('soon !')
-        perso_com()
+        print('Redirecting ... ')
+        Embed()
+
     if CHOICEPERSO == '3':
         choice2()
     else:
@@ -190,6 +191,109 @@ def onmemberjoin():
     else:
         print('Please choose 1 , 2 ,3 or 4 !')
         onmemberjoin()
+
+def Embed():
+    global f
+    import datetime
+    n = True
+    title_try = 1
+    thumb_try = 1
+    author_try = 1
+    footer_try = 1
+    now = datetime.datetime.now()
+    real_time = now.strftime("%Y-%m-%d %H:%M")
+    NAMEEMB = input('What is the command name ?(the bot will answer it with an embed !)')
+    EMBEDSTART = (f"\n@bot.command\nasync def {NAMEEMB}():\n")
+    f.write('{}'.format(SpecificCHAN))
+
+    while n == True:
+        print("\n1.title\n2.thumbnail_url\n3.author\n4.footer\n5.set_image\n6.add_field\n7.quit\nANSWER WITH A NUMBER OTHER WAYS THE PROGRAM WILL CRASH !\n")
+        value = int(input())
+        if value == 7:
+            n = False
+
+        elif value == 6:
+            ask = input("if want in inline reply with 'y' else 'n' --\n")
+            if ask == 'y' or ask == 'Y':
+                print("Its in inline now ")
+                name = input("Enter name --\n")
+                value = input("Enter value --\n")
+                test = f"embed.add_field( name = '{name}' , value = '{value}' , inline = {True} )"
+                f.write(test + '\n')
+                f.close
+                print(test)
+            elif ask == 'n' or ask == 'N':
+                print("It is not in inline now ")
+                name = input("Enter name --\n")
+                value = input("Enter value --\n")
+                test = f"embed.add_field( name = '{name}' , value = '{value}' , inline = {False} )"
+                f.write(test + '\n')
+                f.close
+                print(test)
+
+        # footer
+        elif value == 4:
+            if footer_try == 1:
+                name = input("enter text --\n")
+                icon = input("Enter icon url for author ==\n")
+                test = f"embed.set_author(text = '{name}' , icon_url = '{icon}')"
+                f.write(test + '\n')
+                f.close
+                print(test)
+                footer_try = 0
+            elif footer_try == 0:
+                print("Sorry cant add more than once. ")
+
+
+        elif value == 3:
+            if author_try == 1:
+                name = input("enter author name --\n")
+                icon = input("Enter icon url for author ==\n")
+                test = f"embed.set_author(name = '{name}' , icon_url = '{icon}')"
+                f.write(test + '\n')
+                f.close
+                print(test)
+
+                author_try = 0
+            elif author_try == 0:
+                print("Author can be added only once. ")
+
+        elif value == 5:
+            img = input("Enter image url you want to set --\n")
+            test = f'embed.set_image( url = "{img}")'
+            f.write(test + '\n')
+            f.close
+            print(test)
+
+        # title
+        elif value == 1:
+            if title_try == 1:
+                print("Enter your embed title --")
+                data = input()
+                print("Enter your embed description --")
+                discrip = input()
+                print("Enter your embed colour --")
+                clr = input()
+                test = f"embed = discord.Embed(title = '{data}',description = '{discrip}',color = {clr})"
+                f.write(test + '\n')
+                f.close
+                print(test)
+                title_try = 0
+            elif title_try == 0:
+                print("sorry title can be added only once")
+
+        # thumbnail
+        elif value == 2:
+            if thumb_try == 1:
+                print("Enter your thubnail url --")
+                url = input()
+                test = f"embed.set_thumbnail(url = '{url}')"
+                f.write(test + '\n')
+                f.close
+                print(test)
+                thumb_try = 0
+            elif thumb_try == 0:
+                print("Thubnail cann be added only once")
 
 
 
