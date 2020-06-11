@@ -75,9 +75,6 @@ def start() :
         print("soon , if you want it now , come help us on my github !")
 
     if in_pick == '3':
-        invalid_input = False
-        invalid_inputCHOICE = False
-        invalid_inputCHOICE2 = False
         print('Created by Alexdieu')
         sys.exit()
 
