@@ -6,7 +6,7 @@ invalid_inputCHOICE2 = True
 
 
 def debut():
-    print("Discord Python Bot Editor V.1.1 created by ALEXDIEU !")
+    print("Discord Python Bot Editor V.1.2 created by ALEXDIEU !")
     print("Please choose an option : ")
     print("1.create a new bot")
     print("2.edit a bot(soon)")
