@@ -19,7 +19,7 @@ def status():
     TASK1 = input('Please enter the second task of the bot :\n')
     TASK2 = input('Please enter the third task of the bot :\n')
     TASK3 = input('Please enter the fourth(last) task of the bot :\n')
-    TASKS = (f'async def status_task():\n    while True:\n        await bot.change_presence(activity=discord.Game(\"{TASK}\"))\n        await asyncio.sleep(10)\n        await bot.change_presence(activity=discord.Game(\"{TASK1}\"))\n        await asyncio.sleep(10)\n        await bot.change_presence(activity=discord.Game(\"{TASK2}\"))\n        await asyncio.sleep(10)\n        await bot.change_presence(activity=discord.Game(\"{TASK3}\"))\n        await asyncio.sleep(10)')
+    TASKS = (f'\nasync def status_task():\n    while True:\n        await bot.change_presence(activity=discord.Game(\"{TASK}\"))\n        await asyncio.sleep(10)\n        await bot.change_presence(activity=discord.Game(\"{TASK1}\"))\n        await asyncio.sleep(10)\n        await bot.change_presence(activity=discord.Game(\"{TASK2}\"))\n        await asyncio.sleep(10)\n        await bot.change_presence(activity=discord.Game(\"{TASK3}\"))\n        await asyncio.sleep(10)')
     f.write('{}'.format(TASKS))
     print('succes !')
     startEvent()
@@ -144,12 +144,24 @@ def perso_com():
     CHOICEPERSO = input('Okay , what do you want to do ? \n')
 
     if CHOICEPERSO == '1':
-        return('ok')
-
+        NAMECOM = input('What will b the command name ?\n')
+        ANSWER1 = input('What will the bot answer \n(see github wiki for https://github.com/alexdieu/DiscordPythonBotMaker/wiki/tutorial syntax) ?\n')
+        COMPERSO = (f"@bot.command()\nasync def {NAMECOM}():\n    await context.message.channel.send(\"{ANSWER1}\")")
+        perso_com()
+    if CHOICEPERSO == '2'
+        print('soon !')
+        perso_com()
+    if CHOICEPERSO == '3'
+        choice2()
+    else:
+        print('please answer by 1,2 or 3!')
+        perso_com()
+        
+    
 def onmemberjoin():
     global f
     print('event on member join choosed !')
-    print('Did the bot say your message in DM or in the same channel as the person send the message ?(To answer , \nPlease say 1 for DM , \n2.In a specific channel(need the channel ID), \n3.DM and specific channel\n4.back )')
+    print('Did the bot say your message in DM or in the same channel as the person send the message ?(To answer , \nPlease say 1 for DM , \n2.In a specific channel(need the channel ID), \n3.DM and specific channel\n4.back ')
     answer2 = input('Your choice : ')
     if answer2 == '1':
         DMsg = input('\n Use Tutorial : \nTo type \' do \\\' \nYou have to write or copy/paste :\n{ID} to mention member who just joined\n{SERVERNAME} to mention the server !\nAnd **To write in bold** or \ and \' to write \' !\nWhat should be the DM message ?\n')
