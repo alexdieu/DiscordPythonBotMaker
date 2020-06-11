@@ -91,7 +91,7 @@ def choice2():
         if choiceEV == '1':
             onmemberjoin()
         if choiceEV == '2':
-            print('soon')
+            print('soon(some bugs still not fixed with this function !)')
             choice2()
         if choiceEV == '3':
             onmemberleft()
@@ -124,6 +124,11 @@ def commands():
 
     if commands_choice == '1':
         perso_com()
+    if commands_choice == '2':
+        print('SOON')
+        commands()
+    if commands_choice == '3':
+        choice2()
 
 def onmemberleft():
     LEFTCHANNEL = input('What is the leaving channel ?(channel ID)\n')
@@ -136,7 +141,7 @@ def perso_com():
     print('personnalised commands !')
     print('Options :')
     print('1.Create a personnalised answer to a personnal command for the bot !')
-    print('2.Create an Embed(SOON)!')
+    print('2.Create an Embed(EMBED CREATOR NOW OUT IN STABLE VERSIONS SINCE V1.3)!')
     print('3.Back')
     CHOICEPERSO = input('Okay , what do you want to do ? \n')
 
