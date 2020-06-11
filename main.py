@@ -231,7 +231,6 @@ def Embed():
                 f.close
                 print(test)
 
-        # footer
         elif value == 4:
             if footer_try == 1:
                 name = input("enter text --\n")
@@ -265,7 +264,6 @@ def Embed():
             f.close
             print(test)
 
-        # title
         elif value == 1:
             if title_try == 1:
                 print("Enter your embed title --")
@@ -282,7 +280,6 @@ def Embed():
             elif title_try == 0:
                 print("sorry title can be added only once")
 
-        # thumbnail
         elif value == 2:
             if thumb_try == 1:
                 print("Enter your thubnail url --")
