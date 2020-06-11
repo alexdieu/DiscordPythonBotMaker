@@ -20,3 +20,5 @@ Free Host(host is free for life !) I recommend for hosting python bots(prices ar
 -All bugs actually fixed :❌
 
 -Personnalisation compatible : ✅
+
+transform it as a Pip package : ❌at 5 stars❌
