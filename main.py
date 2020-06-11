@@ -143,7 +143,7 @@ def perso_com():
     if CHOICEPERSO == '1':
         NAMECOM = input('What will b the command name ?\n')
         ANSWER1 = input('What will the bot answer \n(see github wiki for https://github.com/alexdieu/DiscordPythonBotMaker/wiki/tutorial syntax) ?\n')
-        COMPERSO = (f"@bot.command()\nasync def {NAMECOM}():\n    await context.message.channel.send(\"{ANSWER1}\")")
+        COMPERSO = (f"@bot.command()\nasync def {NAMECOM}(context):\n    AUTHOR = \'<@message.author.id>\'\n    SERVERNAME = member.guild.name\n    await context.message.channel.send(\"{ANSWER1}\")")
         f.write('{}'.format(COMPERSO))
         print('succes !')
         perso_com()
