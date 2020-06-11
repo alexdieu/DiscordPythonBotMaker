@@ -24,6 +24,5 @@ Free Host(host is free for life !) I recommend for hosting python bots(prices ar
 -All bugs actually fixed :❌
 
 -Personnalisation compatible : ✅
-https://cdn.discordapp.com/attachments/707272434830540831/720618029825654855/DPBM.ico
 
-transform it as a Pip package : ❌at 5 stars❌
+-transform it as a Pip package : ❌at 5 stars❌
