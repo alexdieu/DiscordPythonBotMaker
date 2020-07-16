@@ -148,7 +148,7 @@ def perso_com():
     if CHOICEPERSO == '1':
         NAMECOM = input('What will b the command name ?\n')
         ANSWER1 = input('What will the bot answer \n(see github wiki for https://github.com/alexdieu/DiscordPythonBotMaker/wiki/tutorial syntax) ?\n')
-        COMPERSO = (f"\n@bot.command()\nasync def {NAMECOM}(context):\n    AUTHOR = \'<@message.author.id>\'\n    SERVERNAME = member.guild.name\n    await context.message.channel.send(\"{ANSWER1}\")")
+        COMPERSO = (f"\n@bot.command()\nasync def {NAMECOM}(context):\n    AUTHOR = \f'<@{message.author.id}>'\n    SERVERNAME = member.guild.name\n    await context.message.channel.send(\"{ANSWER1}\")")
         f.write('{}'.format(COMPERSO))
         print('succes !')
         perso_com()
@@ -170,7 +170,7 @@ def onmemberjoin():
     answer2 = input('Your choice : ')
     if answer2 == '1':
         DMsg = input('\n Use Tutorial : \nTo type \' do \\\' \nYou have to write or copy/paste :\n{ID} to mention member who just joined\n{SERVERNAME} to mention the server !\nAnd **To write in bold** or \ and \' to write \' !\nWhat should be the DM message ?\n')
-        DMNEW = (f'\n@bot.event\nasync def on_member_join(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\'\n    await member.create_dm()\n    await member.dm_channel.send(f\'{DMsg}\')')
+        DMNEW = (f'\n@bot.event\nasync def on_member_join(member):\n    ID = f\'<@{{member.id}}>\'\n    SERVERNAME = member.guild.name\n    await member.create_dm()\n    await member.dm_channel.send(f\'{DMsg}\')')
         f.write('{}'.format(DMNEW))
         print('succes')
         choice2()
