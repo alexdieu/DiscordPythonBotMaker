@@ -28,3 +28,5 @@ I am to lazy to continue this project , so at 5 stars , I will found the time to
 -Personnalisation compatible : ✅
 
 -transform it as a Pip package : ❌at 5 stars❌
+
+-add ui with tinkers : ❌
