@@ -6,9 +6,9 @@ I will soon add a wiki an all kind of stuff !
 Free Host(host is free for life !) I recommend for hosting python bots(prices are very cheap if you want to upgarde for more space storage !) : https://inovaperf.fr/
 **PLEASE CONSULT [TUTO](https://github.com/alexdieu/DiscordPythonBotMaker/wiki/tutorial) BEFORE USE ! **
 
-- **THIS PROJECT IS NO LONGER MAINTAINED DUE TO INACTIVITY AND TIME **
+- **THIS PROJECT IS NO LONGER MAINTAINED DUE TO INACTIVITY AND TIME**
 
-- **THIS PROJECT IS OLD , A LOT OF OTHERS CODE GENERATORS ARE AVAILABLE **
+- **THIS PROJECT IS OLD , A LOT OF OTHERS CODE GENERATORS ARE AVAILABLE**
 
 I am to lazy to continue this project , so at 5 stars , I will found the time to add a lot of other possibilities and 
 * Last updates :
